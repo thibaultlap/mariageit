@@ -1,0 +1,143 @@
+/* GLOBAL STYLES
+-------------------------------------------------- */
+/* Padding below the footer and lighter body text */
+
+html,body{
+    height: 100%
+}
+
+body {
+  padding-bottom: 40px;
+  color: #5a5a5a;
+}
+
+@font-face {
+    font-family: tangerine;
+    src: url('../fonts/tangerine_regular.ttf');
+}
+
+@font-face {
+    font-family: urban;
+    src: url('../fonts/urban-elegance-regular.ttf');
+}
+
+@font-face {
+    font-family: urban;
+    src: url('../fonts/urban-elegance-bold.ttf');
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: amperzand;
+    src: url('../fonts/amperzand.ttf');
+}
+
+/* CUSTOMIZE THE JUMBOTRON
+-------------------------------------------------- */
+
+.jumbotron {
+  text-align: center;
+  background-color: #AAE6FA;
+  color: white; 
+}
+
+.jumbotron h1 {
+  font-family: amperzand;
+  font-weight: normal;
+  font-size: 700%;
+}
+
+.jumbotron p {
+  text-align: left;
+  font-size: 125%;
+  color: white;
+}
+
+/* MARKETING CONTENT
+-------------------------------------------------- */
+
+.marketing {
+  min-height: 100%;
+
+}
+.marketing h3 {
+  text-align: left;
+  font-family: urban;
+  font-weight: normal;
+  font-size: 150%;
+  margin-bottom: 30px;
+}
+
+.row {
+  text-align: center;
+}
+
+.col-md-1 {
+  margin-right: -20px;
+}
+
+.leftspacer {
+  margin-left: -20px;
+}
+
+.negative-spacer {
+  margin-right: -40px;
+}
+
+/* Center align the text within the three columns below the carousel */
+.marketing h2 {
+  font-size: 400%;
+  font-family: tangerine;
+  font-weight: normal;
+  margin-bottom: 20px;
+}
+
+.obs{
+  font-family: urban;
+  font-weight: bold;
+  margin-left: 15px;
+  margin-top: -10px;
+  margin-bottom: 25px;
+}
+.positive-spacer {
+  margin-right: +40px;
+}
+
+.bspacer {
+  margin-bottom: +30px;
+}
+
+.upspacer {
+  margin-top: 25px;
+}
+
+.rspacer {
+  margin-left: 15px;
+}
+
+footer {
+    bottom: -200px;
+    height: 50px;
+    left: 50px;
+    position: absolute;
+    right: 50px;
+}
+
+
+
+/* RESPONSIVE CSS
+-------------------------------------------------- */
+
+@media (max-width: 768px) {
+  .jumbotron h1{
+    font-size: 300%;
+  }
+
+  .jumbotron p{
+    display: none;
+  }
+}
+
+@media (min-width: 992px) {
+
+}

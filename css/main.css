@@ -1,0 +1,307 @@
+/* GLOBAL STYLES
+-------------------------------------------------- */
+/* Padding below the footer and lighter body text */
+
+body {
+  padding-bottom: 40px;
+  color: #5a5a5a;
+}
+
+@font-face {
+    font-family: tangerine;
+    src: url('../fonts/tangerine_regular.ttf');
+}
+
+@font-face {
+    font-family: urban;
+    src: url('../fonts/urban-elegance-regular.ttf');
+}
+
+@font-face {
+    font-family: urban;
+    src: url('../fonts/urban-elegance-bold.ttf');
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: amperzand;
+    src: url('../fonts/amperzand.ttf');
+}
+
+@font-face {
+    font-family: frames;
+    src: url('../fonts/frames.ttf');
+}
+
+/* CUSTOMIZE THE JUMBOTRON
+-------------------------------------------------- */
+
+.jumbotron {
+  background-color: #AAE6FA;
+  text-align: center;
+}
+
+.jumbotron .flags img {
+  width: 3%;
+  height: auto;
+  margin-top: -20px;
+}
+
+.jumbotron h2 {
+  color: white;
+  font-family: urban;
+  font-weight: bold;
+  font-size: 180%;
+  text-align: center;
+}
+
+
+.jumbotron h1 {
+  color: white;
+  font-family: amperzand;
+  font-size: 600%
+}
+
+.jumbotron h3 {
+  color: white;
+  font-family: frames;
+  font-size: 500%;
+  margin-top: -40px;
+}
+
+.post-content {
+    opacity: 1;
+    margin: 0 auto;
+    margin-top: -89px;
+    text-align: center;
+    position: relative;
+    width:50%;
+}
+
+.thumbnail {
+    margin:0 auto;
+    text-align:center;
+    background-color: #AAE6FA;
+    border-width: 0;
+
+}
+
+.wrapper {
+    text-align:center;
+}
+
+
+/* MARKETING_INTRO CONTENT
+-------------------------------------------------- */
+
+/* Pad the edges of the mobile views a bit */
+.marketing_intro {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.marketing_intro .col-lg-4 p {
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.marketing_intro p {
+  text-align: center;
+  font-family: urban;
+  font-weight: normal;
+}
+
+.modal h5 {
+  font-size: 150%;
+  font-family: urban;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.modal h4 {
+  font-family: tangerine;
+  font-size: 400%;
+}
+
+.modal p {
+  font-family: urban;
+  font-size: 130%;
+}
+
+
+/* MARKETING CONTENT
+-------------------------------------------------- */
+
+/* Pad the edges of the mobile views a bit */
+.marketing {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+/* Center align the text within the three columns below the carousel */
+.marketing {
+  margin-bottom: 20px;
+  text-align: left;
+}
+.marketing h2 {
+  font-size: 500%;
+  font-family: tangerine;
+  font-weight: normal;
+}
+.marketing p {
+  margin-right: 10px;
+  margin-left: 10px;
+  font-family: urban;
+  font-weight: normal;
+}
+
+.marketing p {
+  text-align: left;
+  font-family: urban;
+  font-weight: normal;
+}
+
+
+/* Featurettes
+------------------------- */
+
+.featurette-divider {
+  margin: 80px 0; /* Space out the Bootstrap <hr> more */
+}
+
+/* Thin out the marketing headings */
+.featurette-heading {
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -1px;
+}
+
+
+/* RESPONSIVE CSS
+-------------------------------------------------- */
+
+@media (max-width: 768px) {
+
+  /* Remove the edge padding needed for mobile */
+  .marketing {
+    margin-right: 20px;
+    margin-left: 20px;
+    text-align: center;
+  }
+
+  .marketing_intro p {
+    margin-right: 20px;
+    margin-left: 20px;
+    text-align: center;
+  }
+
+  .featurette-heading {
+    font-size: 50px;
+    margin-top: 20px;
+  }
+
+  .featurette-divider {
+   margin: 40px 0; /* Space out the Bootstrap <hr> more */
+  }
+
+  #content .modal.fade.in {
+    top: 5%;
+  }
+
+  .jumbotron .flags img {
+    width: 10%;
+    height: auto;
+    margin-top: -20px;
+  }
+
+  .jumbotron .thumbnail img {
+    visibility: hidden;
+    text-align: center;
+    width: 0;
+    height: 0;
+  }
+
+  .jumbotron h1 {
+    font-size: 60px;
+    color: white;
+  }
+
+  .jumbotron h2 {
+    margin-top: 0px;
+    font-size: 0px;
+    color: #5a5a5a;
+    visibility: hidden;
+  }
+
+  .marketing p {
+    text-align: center;
+  }
+
+  .marketing h2 {
+    font-size: 300%;
+  }
+
+  .featurette-image {
+    text-align: center;
+  }
+
+.modal h5 {
+  font-size: 120%;
+  font-family: urban;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.modal h4 {
+  font-family: tangerine;
+  font-size: 250%;
+}
+
+.modal p {
+  font-family: urban;
+  font-size: 110%;
+}
+
+
+}
+
+@media (min-width: 768px max-width: 970px) {
+
+    /* Remove the edge padding needed for mobile */
+  .marketing {
+    padding-right: 20px;
+    padding-left: 20px;
+    text-align: center;
+  }
+
+  .marketing_intro {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+
+  .featurette-heading {
+    font-size: 50px;
+  }
+
+  #content .modal.fade.in {
+    top: 5%;
+  }
+
+  .jumbotron img {
+    max-width: 350px;
+    text-align: center;
+  }
+
+    .marketing img {
+    max-width: 350px;
+    text-align: center;
+  }
+
+  .marketing p {
+    text-align: center;
+  }
+
+  .marketing h2 {
+    font-size: 300%;
+  }
+}

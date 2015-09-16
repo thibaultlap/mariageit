@@ -1,0 +1,194 @@
+/* GLOBAL STYLES
+-------------------------------------------------- */
+/* Padding below the footer and lighter body text */
+
+html,body{
+    height: 100%
+}
+
+body {
+  padding-bottom: 40px;
+  color: #5a5a5a;
+}
+
+@font-face {
+    font-family: tangerine;
+    src: url('../fonts/tangerine_regular.ttf');
+}
+
+@font-face {
+    font-family: urban;
+    src: url('../fonts/urban-elegance-regular.ttf');
+}
+
+@font-face {
+    font-family: urban;
+    src: url('../fonts/urban-elegance-bold.ttf');
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: amperzand;
+    src: url('../fonts/amperzand.ttf');
+}
+
+/* CUSTOMIZE THE JUMBOTRON
+-------------------------------------------------- */
+
+.jumbotron {
+  text-align: center;
+  background-color: #AAE6FA;
+  color: white;
+}
+
+.jumbotron h1 {
+  font-family: amperzand;
+  font-weight: normal;
+  font-size: 700%;
+}
+
+.jumbotron p {
+  text-align: left;
+  font-size: 125%;
+  color: white;
+}
+
+/* MARKETING CONTENT
+-------------------------------------------------- */
+.marketing {
+    min-height: 100%;
+}
+
+.marketing p {
+  text-align: left;
+  font-family: urban;
+  font-weight: normal;
+  font-size: 110%;
+}
+
+.col-md-1 {
+  margin-right: -20px;
+}
+
+.leftspacer {
+  margin-left: -20px;
+}
+
+.negative-spacer {
+  margin-right: -40px;
+}
+
+.positive-spacer {
+  margin-right: +40px;
+}
+
+.bspacer {
+  margin-bottom: +30px;
+}
+
+.upspacer {
+  margin-top: 25px;
+}
+
+.rspacer {
+  margin-left: 15px;
+}
+
+.radio-top-spacer {
+  margin-top: -5px;
+}
+
+.modal-title {
+  font-family: tangerine;
+  font-size: 400%;
+}
+
+.modal-body {
+  font-family: urban;
+  font-size: 130%;
+}
+
+footer {
+    padding-bottom: 50px;
+    left: 50px;
+    position: relative;
+    right: 50px;
+}
+
+
+
+/* RESPONSIVE CSS
+-------------------------------------------------- */
+
+@media (max-width: 768px) {
+    .jumbotron h1{
+    font-size: 300%;
+  }
+
+  .jumbotron p{
+    display: none;
+  }
+
+  .col-md-1 {
+  margin-right: 0px;
+}
+
+  .marketing {
+    padding-right: 20px;
+    padding-left: 20px;
+    text-align: center;
+  }
+
+.leftspacer {
+  margin-left: 0px;
+}
+
+.negative-spacer {
+  margin-right: 0px;
+}
+
+.positive-spacer {
+  margin-right: 0px;
+}
+
+.positive-spacer-br {
+  margin-right: +0px;
+}
+
+.bspacer {
+  margin-bottom: +30px;
+}
+
+.upspacer {
+  margin-top: 0px;
+}
+
+.rspacer {
+  margin-left: +15px;
+}
+
+.radio-top-spacer {
+  margin-top: -0px;
+}
+
+  #content .modal.fade.in {
+    top: 5%;
+  }
+
+  footer {
+    padding-bottom: 50px;
+    position: relative;
+    right: 70px;
+    left: 70px;
+}
+
+}
+
+@media (max-width: 992px) {
+  footer {
+    padding-bottom: 50px;
+    position: relative;
+    margin-right: 150px;
+    padding-right: 150px;
+}
+}

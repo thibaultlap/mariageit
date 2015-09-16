@@ -1,0 +1,140 @@
+/* GLOBAL STYLES
+-------------------------------------------------- */
+/* Padding below the footer and lighter body text */
+
+body {
+  padding-bottom: 40px;
+  color: #5a5a5a;
+}
+
+@font-face {
+    font-family: tangerine;
+    src: url('../fonts/tangerine_regular.ttf');
+}
+
+@font-face {
+    font-family: urban;
+    src: url('../fonts/urban-elegance-regular.ttf');
+}
+
+@font-face {
+    font-family: urban;
+    src: url('../fonts/urban-elegance-bold.ttf');
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: amperzand;
+    src: url('../fonts/amperzand.ttf');
+}
+
+/* CUSTOMIZE THE JUMBOTRON
+-------------------------------------------------- */
+
+.jumbotron {
+  text-align: center;
+  background-color: #AAE6FA;
+  color: white;
+}
+
+.jumbotron h1 {
+  font-family: amperzand;
+  font-weight: normal;
+  font-size: 700%;
+}
+
+.jumbotron p {
+  text-align: left;
+  font-size: 125%;
+  color: white;
+}
+
+/* MARKETING CONTENT
+-------------------------------------------------- */
+
+
+/* Pad the edges of the mobile views a bit */
+.marketing {
+  padding-right: 0px;
+  padding-left: 0px;
+  text-align: center;
+}
+
+/* Center align the text within the three columns below the carousel */
+.marketing h2 {
+  font-size: 400%;
+  font-family: tangerine;
+  font-weight: normal;
+  margin-bottom: 20px;
+}
+
+.obs{
+  font-family: urban;
+  font-weight: bold;
+  margin-left: 15px;
+  margin-top: -10px;
+  margin-bottom: 25px;
+}
+
+.spacer {
+    margin-bottom: 20px; /* define margin as you see fit */
+    margin-top: 20px; /* define margin as you see fit */
+}
+
+.marketing p {
+  text-align: center;
+  font-family: urban;
+  font-weight: normal;
+  font-size: 110%;
+}
+
+.maptext {
+  font-size: 40%;
+  font-family: urban;
+}
+
+.bullet {
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+}
+
+/* Featurettes
+------------------------- */
+
+/* Thin out the marketing headings */
+.featurette-head {
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -1px;
+  font-size: 50px;
+}
+
+img {
+  width: 95%;
+  height: auto;
+}
+
+
+
+/* RESPONSIVE CSS
+-------------------------------------------------- */
+
+@media (max-width: 768px) {
+
+  /* Remove the edge padding needed for mobile */
+  .marketing {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+
+  .featurette-head {
+  }
+
+  .jumbotron h1{
+    font-size: 300%;
+  }
+
+  .jumbotron p{
+    display: none;
+  }
+}

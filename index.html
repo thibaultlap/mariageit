@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<!--[if lte IE 6 ]><html lang="en-us" class="ie ie6"><![endif]--> 
+<!--[if IE 7 ]><html lang="en-us" class="ie ie7"><![endif]--> 
+<!--[if IE 8 ]><html lang="en-us" class="ie ie8"><![endif]--> 
+<!--[if !IE ]><html lang="en-us"><![endif]--> 
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="robots" content="noindex">
+  <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge" /><![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Mariage Adèle & Dionisio</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="index.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+  </head>
+
+  <body>
+
+    <div class="container holder">
+      <div class="body">
+        <div class="flagfr col-md-6 col-xs-6">
+          <a href="./fr/main.html"> <img class="flagfrimg" id="flagfrimg" src ="images/france.png" height="300" alt="France"></a>
+          <form id="formulairefr" class="form-horizontal" role="form" onsubmit="validepass('passfr'); return false;">
+              <div class="form-group">
+
+                <label class="col-md-3 col-sm-3" for="passfr">Mot de passe:</label>
+                
+                <div class="col-md-3 col-sm-3">
+                <input type="password" class="form-control" name="mdp" id="passfr">
+              </div>
+
+              <button type="submit" id="sendfr" class="btn btn-success">OK</button>
+
+              <button type="button" id="cancelfr" class="btn btn-danger" onclick="setVisible('formulairefr', 0)">Annuler</button>
+
+              </div>
+          </form>
+        </div>
+        <div class="flagbr col-md-6 col-xs-6">
+          <a href="./br/main.html"> <img class="flagbrimg" id="flagbrimg" src ="images/brasil.png" height="300" alt="Brasil"></a>
+          <form id="formulairebr" class="form-horizontal" role="form" onsubmit="validepass('passbr'); return false;">
+              <div class="form-group">
+
+                <label class="col-md-2 col-sm-2" for="passbr">Senha:</label>
+                
+                <div class="col-md-3 col-sm-3">
+                <input type="password" class="form-control" name="mdp" id="passbr">
+              </div>
+
+              <button type="submit" id="sendbr" class="btn btn-success">OK</button>
+
+              <button type="button" id="cancelbr" class="btn btn-danger" onclick="setVisible('formulairebr', 0)">Cancelar</button>
+
+              </div>
+          </form>        
+          </div>
+		  
+		<div class="jumbotron">
+			  <div class="container">
+				<h1>Transmission en live de la messe / Transmissão ao vivo da missa</h1>
+				<p><a class="btn btn-primary btn-lg" target="_blank" href="http://www.youtube.com/watch?v=BJCd2ZfTwQE" role="button">Cliquer ici / Clicar aqui</a></p>
+			  </div>
+			</div>
+      </div>
+
+      <!-- FOOTER -->
+      <div id="footer">
+        <p>&copy; 2014 Dionisio
+      </div>   
+         
+    </div>
+
+    <script type="text/javascript">
+        function validepass(id) {
+          var form = document.getElementById(id);
+          if(form.value == "mariagea&d"){
+            if(id == "passfr") document.location = "./fr/main.html"
+            else document.location = "./br/main.html"
+          }
+          else if(form.value == "stella") document.location = "./stella/main.html"
+          else{
+            if(id == "passfr") alert('Contactez Adèle ou Dionisio pour le mot de passe');
+            else alert('Contacte Adèle ou Dionisio para a senha');
+          } 
+          }
+    </script>
+
+    <script type="text/javascript">
+        function setVisible(id, visible) {
+          var obj = document.getElementById(id);
+          if(visible == 1){
+            obj.style.visibility = "visible";
+            } 
+          else{
+            obj.style.visibility = "hidden";
+          } 
+          }
+    </script>
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/docs.min.js"></script>
+    <script src="https://code.jquery.com/jquery.js"></script>
+  </body>
+</html>
