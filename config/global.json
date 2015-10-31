@@ -1,0 +1,21 @@
+{
+  "global": {
+    "parseVersion": "1.4.2"
+  },
+  "applications": {
+    "MariageIetT": {
+      "applicationId": "wDWE4F9YtBKpOuwRLuMItrNWM8vCpt6uBizLdpHg"
+    },
+    "SoluSourcing": {
+      "applicationId": "hqLO3jG42Gx4yof9ck9j5f4qLmnSe62ENnXgJJ3X",
+      "masterKey": "OZ87CYipaZQMYpVJH6HpqmVwIecSfI2NGw2VdC2j"
+    },
+    "_default": {
+      "link": "MariageIetT"
+    },
+    "solucomandshare": {
+      "applicationId": "cs1D8UKaAlmMusem0uX7zy5yWMuPpYvtIs8ZQNti",
+      "masterKey": "AuBL8CnOCXvJDMFHq4CLqUOckcSagpYguFfKNjxy"
+    }
+  }
+}

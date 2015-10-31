@@ -1,0 +1,63 @@
+
+
+body {
+    font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    line-height: 1.4em;
+    background: #eeeeee url('../img/bg.png');
+    color: #4d4d4d;
+    width: 100%;
+    margin: 0 auto;
+	padding-top: 70px;
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+    -ms-font-smoothing: antialiased;
+    -o-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+}
+
+.section {
+    position: relative;
+}
+
+#main {
+    position: relative;
+    z-index: 2;
+    border-top: 1px dotted #adadad;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  margin-right: 15px;
+}
+
+
+.login-form {
+margin-bottom: 30px;
+}
+
+
+.spacer {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+@media screen and (max-width: 1090px){
+}
+
+@media (max-width: 768px){
+
+
+  .spacer_login {
+  	padding-bottom: 10px;
+  }
+
+  .neg-spacer_login {
+  	padding-bottom: -20px;
+  }
+
+
+}
