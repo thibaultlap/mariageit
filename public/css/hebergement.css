@@ -33,14 +33,14 @@ body {
 
 .jumbotron {
   text-align: center;
-  background-color: #b13070;
+  background-color: #764c75;
   color: white;
 }
 
 .jumbotron h1 {
   font-family: amperzand;
-  font-weight: normal;
-  font-size: 700%;
+  font-weight: lighter;
+  font-size: 500%;
 }
 
 .jumbotron p {
