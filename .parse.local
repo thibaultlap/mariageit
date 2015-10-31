@@ -1,0 +1,10 @@
+{
+  "applications": {
+    "MariageIetT": {
+      "applicationId": "wDWE4F9YtBKpOuwRLuMItrNWM8vCpt6uBizLdpHg"
+    },
+    "_default": {
+      "link": "MariageIetT"
+    }
+  }
+}

@@ -37,7 +37,7 @@ body {
 -------------------------------------------------- */
 
 .jumbotron {
-  background-color: #A288E3;
+  background-color: #b13070;
   text-align: center;
 }
 
@@ -59,7 +59,9 @@ body {
 .jumbotron h1 {
   color: white;
   font-family: amperzand;
-  font-size: 600%
+  font-size: 600%;
+  margin-bottom: 60px;
+  
 }
 
 .jumbotron h3 {
@@ -81,14 +83,16 @@ body {
 .thumbnail {
     margin:0 auto;
     text-align:center;
-    background-color: #AAE6FA;
+    background-color: #b13070;
     border-width: 0;
 
 }
 
 .wrapper {
     text-align:center;
+	
 }
+
 
 
 /* MARKETING_INTRO CONTENT
