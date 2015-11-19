@@ -36,23 +36,73 @@ $(function() {
 
   var LogInView = Parse.View.extend({
     events: {
-      "click .login-btn": "logIn"
+      "click #chercher-btn": "RechercheInvite",
+      "click #annuler-btn": "AnnRechercheInvite",
+      "click .list-group-item": "ChooseInvite",
+      "click .enter-btn": "EnterSite"
     },
 
     el: ".content",
     
     initialize: function() {
-      _.bindAll(this, "logIn");
+      _.bindAll(this, "RechercheInvite", "AnnRechercheInvite", "ChooseInvite", "EnterSite");
 	  document.getElementById("footer").style.marginTop = "15px";
 	  document.getElementById("body").style.paddingTop = "0px";
-      this.render();
+    $('[data-toggle="popover"]').popover();
+    this.render();
     },
 
-    logIn: function(e) {
-    	$('#UserChoice').collapse('toggle');
+    EnterSite: function(e) {
+      window.location.href = "main_test.html";
+    },
+
+    ChooseInvite: function(e) {
+      choosenInvite = e.target;
+      this.$("#loginPrenom").val(choosenInvite.getAttribute("prenom"));
+      this.$("#loginNom").val(choosenInvite.getAttribute("nom"));
+      
+      sessionStorage.setItem('nom', choosenInvite.getAttribute("nom"));
+      sessionStorage.setItem('prenom', choosenInvite.getAttribute("prenom"));
+      sessionStorage.setItem('groupe', choosenInvite.getAttribute("groupe"));
+      sessionStorage.setItem('type', choosenInvite.getAttribute("type"));
+      sessionStorage.setItem('rsvp', choosenInvite.getAttribute("rsvp"));
+
+      $('.enter-btn').removeAttr("disabled");
+      $('#UserList').empty();
+      $('#UserChoice').collapse('hide');
+
+    },
+
+    AnnRechercheInvite: function(e) {
+      $('#UserList').empty();
+      $('#UserChoice').collapse('hide');
+
+      sessionStorage.setItem('nom', "nom");
+      sessionStorage.setItem('prenom', "prenom");
+      sessionStorage.setItem('groupe', "groupe");
+      sessionStorage.setItem('type', "type");
+      sessionStorage.setItem('rsvp', false);
+
+      $('.login-btn').popover('hide');
+
+      this.$(".enter-btn").attr("disabled", "disabled");
+      this.$("#loginNom").removeAttr("disabled");
+      this.$("#loginPrenom").removeAttr("disabled");
+
+      this.$(".login-btn").text("Chercher");
+      this.$(".login-btn").addClass("btn-primary");
+      this.$(".login-btn").removeClass("btn-danger");
+      this.$(".login-btn").attr("id", "chercher-btn");
+      this.$(".list-group-item").remove();
+    },
+
+    RechercheInvite: function(e) {
 		var self = this;
 		var nom = this.$("#loginNom").val().latinise();
 		var prenom = this.$("#loginPrenom").val().latinise();
+
+    this.$("#loginNom").attr("disabled", "disabled");
+    this.$("#loginPrenom").attr("disabled", "disabled");
 
 		this.$("#loginNom").val(nom);
 		this.$("#loginPrenom").val(prenom);
@@ -68,6 +118,10 @@ $(function() {
 		  	console.log("Found: " + results.length);
 		  	if(results.length >= 1)
 		  	{
+          this.$(".login-btn").text("Annuler");
+          this.$(".login-btn").attr("id","annuler-btn");
+          this.$(".login-btn").addClass("btn-danger");
+          this.$(".login-btn").removeClass("btn-primary");
 		  		for(i=0; i<results.length; i++)
 	  			{
 	  				var listDiv = document.createElement('button');
@@ -76,11 +130,54 @@ $(function() {
 	  				listDiv.innerHTML = results[i].get('prenom') + " " + results[i].get('nom');
 	  				$("#userList").append(listDiv);
 	  			}
-			}
-			else
-			{
-				//this.$(".enter-btn").prop('disabled', true);
-			}
+          $('#UserChoice').collapse('show');
+			  }
+  			else
+  			{
+                var Invites2 = Parse.Object.extend("invites");
+                var query2 = new Parse.Query(Invites2);
+                query2.startsWith("prenom", prenom[0]);
+                console.log(prenom[0] + " " + nom[0]);
+                query2.startsWith("nom", nom[0]);
+                query2.descending("nom");    
+                query2.find({
+                  success: function(results) {
+                    this.$(".login-btn").text("Annuler");
+                    this.$(".login-btn").attr("id","annuler-btn");
+                    this.$(".login-btn").addClass("btn-danger");
+                    this.$(".login-btn").removeClass("btn-primary");
+                    console.log("Found: " + results.length);
+                    if(results.length >= 1)
+                    {
+                      for(i=0; i<results.length; i++)
+                      {
+                        var listDiv = document.createElement('button');
+                        listDiv.type = 'button';
+                        listDiv.className = 'list-group-item';
+
+                        $(listDiv).attr("nom", results[i].get('nom'));
+                        $(listDiv).attr("prenom", results[i].get('prenom'));
+                        $(listDiv).attr("rsvp", results[i].get('RSVP'));
+                        $(listDiv).attr("groupe", results[i].get('groupe'));
+                        $(listDiv).attr("type", results[i].get('type'));
+
+                        listDiv.innerHTML = results[i].get('prenom') + " " + results[i].get('nom');
+                        $("#userList").append(listDiv);
+                        $('#UserChoice').collapse('show');
+                      }
+                    }
+                    else
+                    {
+                      $('.login-btn').popover('show');
+                    }
+                   
+                  },
+                  error: function(error) {
+                  }
+                  
+                });
+  				
+  			}
 			 
 		  },
 		  error: function(error) {
@@ -233,10 +330,11 @@ $(function() {
   
   var state = new AppState;
 
-  var currNom = "nom";
-  var currPrenom = "prenom";
-  var currID = "1234";
-  var currRSVP = false;
+  sessionStorage.setItem('nom', "nom");
+  sessionStorage.setItem('prenom', "prenom");
+  sessionStorage.setItem('groupe', "groupe");
+  sessionStorage.setItem('type', "type");
+  sessionStorage.setItem('rsvp', false);
 
   new AppRouter;
   Parse.history.start();

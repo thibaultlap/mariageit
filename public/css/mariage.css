@@ -15,6 +15,29 @@ body {
     font-smoothing: antialiased;
 }
 
+.container-fluid {
+  padding-right: 0px;
+  padding-left: 0px;
+}
+
+.jumbotron h1 {
+  color: white;
+  font-family: amperzand;
+  font-size: 500%;
+  font-weight: lighter;
+}
+
+.jumbotron {
+  background-color: #764c75;
+  text-align: center;
+  height: 200px;
+}
+
+@font-face {
+    font-family: amperzand;
+    src: url('../fonts/amperzand.ttf');
+}
+
 .section {
     position: relative;
 }
