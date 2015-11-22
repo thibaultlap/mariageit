@@ -266,6 +266,14 @@ body {
   font-size: 110%;
 }
 
+#bandeauIntro {
+  display: none;
+}
+
+  #imageContacts {
+  display: none;
+}
+
 
 }
 
@@ -308,4 +316,13 @@ body {
   .marketing h2 {
     font-size: 300%;
   }
+
+  #bandeauIntro {
+  display: none;
+}
+
+  #imageContacts {
+  display: none;
+}
+
 }
