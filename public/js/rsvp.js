@@ -273,6 +273,14 @@ $(function() {
           saveInviteObj.save(null, {
             success: function(invite) {
               $("#items :input").attr("disabled", true);
+              sessionStorage.setItem('rsvp', true);
+              sessionStorage.setItem('quiReponduId', sessionStorage.getItem('id'));
+              sessionStorage.setItem('quiRepondu', sessionStorage.getItem('prenom') + " " + sessionStorage.getItem('nom'));
+              sessionStorage.setItem('vinhonneur', document.getElementById("vinhonneurOui").checked);
+              sessionStorage.setItem('diner', document.getElementById("dinerOui").checked);
+              sessionStorage.setItem('brunch', document.getElementById("brunchOui").checked);
+              sessionStorage.setItem('mail', document.getElementById("email").value);
+              sessionStorage.setItem('adresse', document.getElementById("adresse").value);              
             },
             error: function(invite, error) {
             }
