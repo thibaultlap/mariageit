@@ -34,6 +34,10 @@ body {
 
 /* CUSTOMIZE THE JUMBOTRON
 -------------------------------------------------- */
+.container-fluid {
+  padding-right: 0px;
+  padding-left: 0px;
+}
 
 .jumbotron {
   text-align: center;
@@ -66,53 +70,24 @@ body {
   font-size: 110%;
 }
 
-.col-md-1 {
-  margin-right: -20px;
-}
-
-.leftspacer {
-  margin-left: -20px;
-}
-
-.negative-spacer {
-  margin-right: -40px;
-}
-
-.positive-spacer {
-  margin-right: +40px;
-}
-
-.bspacer {
-  margin-bottom: +30px;
-}
-
-.upspacer {
-  margin-top: 25px;
-}
-
-.rspacer {
-  margin-left: 15px;
-}
-
-.radio-top-spacer {
-  margin-top: -5px;
-}
-
-.modal-title {
-  font-family: tangerine;
-  font-size: 400%;
-}
-
-.modal-body {
+.input-group-addon {
   font-family: urban;
-  font-size: 130%;
 }
 
-footer {
+#addInviteRSVP {
+  display : none;
+}
+
+.spacer {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+#footer {
     padding-bottom: 50px;
-    left: 50px;
     position: relative;
-    right: 50px;
+    width:100%;
+    padding-right: 20px;
 }
 
 

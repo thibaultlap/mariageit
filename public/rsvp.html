@@ -13,7 +13,7 @@
     <meta name="author" content="">
     <link rel="shortcut icon" href="../ico/heart.ico">
 
-    <title>Mariage Adèle & Dionisio</title>
+    <title>Mariage Ingrid & Thibault</title>
 
     <!-- Bootstrap core CSS -->
     <link href="./css/bootstrap.min.css" rel="stylesheet">
@@ -30,142 +30,129 @@
     <!-- Custom styles for this template -->
     <link href="./css/rsvp.css" rel="stylesheet">
 
-     <!-- // <script type="text/javascript"> -->
-<!-- //     $(window).load(function(){
-//       if(window.location.hash == "thankyou"){
-//         $('#thanks').modal('show');
-//       }
-//     });
-// </script>
- -->  </head>
-
-
-    <!-- Jumbotron
+        <!-- Bootstrap core JavaScript
     ================================================== -->
-    <div class="jumbotron">
-      <a href="main_test.html"><p><span class="glyphicon glyphicon-arrow-left"></span> Retourner</p></a>
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>  
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/docs.min.js"></script>
+    <script src="lib/js/parse-1.4.2.min.js"></script>
+    <script src="js/underscore.js"></script>
+    <script src="js/rsvp.js"></script>
+
+</head>
+
+
+  <body id="body">
+
+    <div class="container-fluid">
+  
+    <div class="content">
+      </div>
+
+
+    <script type="text/template" id="rsvp-template">
+
+    <div class="jumbotron" style="border-radius: 0px;">
+      <a href="main.html"><p><span class="glyphicon glyphicon-arrow-left"></span> Retourner</p></a>
       <h1>RSVP</h1>
     </div>
-    <!-- Marketing messaging and featurettes
-    ================================================== -->
-    <!-- Wrap the rest of the page in another container to center all the content. -->
 
     <div class="container marketing">
 
-        <div id="items">
-          <form id="formulaire" method="POST" action="http://formspree.io/mariageadeledionisio@gmail.com" class="form-horizontal" role="form">
-                  <div class="form-group bspacer">
-
-                  <label class="col-md-1" for="Prenom">Prénom:</label>
-                  
-                  <div class="col-md-5 positive-spacer">
-                  <input type="text" class="form-control" name="Prenom" placeholder="Prénom">
-                  </div>
-                  
-                  <label class="col-md-1 negative-spacer" for="Nom">Nom:</label>
-                  
-                  <div class="col-md-5">
-                  <input type="text" class="form-control" name="Nom" placeholder="Nom">
-                  </div>
-
-                </div>
-
-                <div class="form-group bspacer">
-                  <label class="col-md-1" for="Email">Email:</label>
-                  
-                  <div class="col-md-11">
-                  <input type="email" class="form-control" name="Email" placeholder="Email">
-                  </div>
-                </div>
-
-                <div class="form-group bspacer">
-                  <label class="col-md-1" for="Adresse">Adresse:</label>
-                  
-                  <div class="col-md-11">
-                    <textarea class="form-control" rows="3" name="Adresse" placeholder="Adresse"></textarea>
-                  </div>
-                </div>  
-
-                <div class="form-group bspacer">
-                  <label class="rspacer" for="presence">Présence à la réception le Samedi soir :
-                  </label>
-                  <label class="radio-inline rspacer " style="margin-top : -10px"> 
-                      <input name="presence" type="radio" value="Oui"> Je serai là
-                  </label>
-                  <label class="radio-inline" style="margin-top : -10px">
-                      <input name="presence" type="radio" value="Non"> Je suis très triste de ne pouvoir être présent ce week-end là
-                  </label>
-                  <label class="radio-inline" style="margin-top : -10px">
-                      <input name="presence" type="radio" value="PeutEtre"> Je ne sais pas encore, je confirmerai plus tard
-                  </label>
-                </div>
-
-                <div class="form-group">
-                    <label class="col-md-4 negative-spacer" for="brunch">Présence au brunch le Dimanche à 13h :</label>
-                    <label class="col-md-1 radio-inline" style="margin-top : -7px">
-                      <input type="radio" name="brunch" id="inlineRadio1" value="Oui"> Oui
-                    </label>
-
-                    <label class="col-md-1 radio-inline" style="margin-top : -7px">
-                      <input type="radio" name="brunch" id="inlineRadio2" value="Non"> Non
-                    </label>            
-                </div>  
-
+        <div class="row">
+          <div class="col-md-2" style="padding-left: 30px;">
+            <button class="btn btn-danger" id="changeUser">Changer d´utilisateur</button>
+          </div>
         </div>
-        <button class="pull-right btn btn-primary upspacer bspacer">Envoyer</button>
 
-		<input type="hidden" name="_next" value="/fr/merci.html" />
+        <div class="container" id="items">
+          <div class="row">
+                  <div class="col-md-6 spacer"> 
+                    <div class="input-group">
+                      <span class="input-group-addon">Prenom</span>
+                      <input type="text" class="form-control" disabled="disabled" id="prenom">
+                    </div>
+                  </div>
 
-        </form>
+                  <div class="col-md-6 spacer"> 
+                    <div class="input-group">
+                      <span class="input-group-addon">Nom</span>
+                      <input type="text" class="form-control" disabled="disabled" id="nom">
+                    </div>
+                  </div>
+            </div>
+            <div class="row">                  
+                  <div class="col-md-12 spacer"> 
+                    <div class="input-group">
+                      <span class="input-group-addon">Email</span>
+                      <input type="text" class="form-control" id="email">
+                    </div>
+                  </div>
+            </div>
+            <div class="row">                   
+                  <div class="col-md-12 spacer">  
+                    <p>Adresse :</p>
+                    <textarea class="form-control" rows="2" id="adresse"></textarea>
+                  </div>
+            </div>
+            <div class="row"> 
+                  <div class="form-group col-md-4 spacer" id="vinhonneur">
+                    <p>Présence au vin d´honneur :</p>
+                    <label class="radio-inline " style="margin-top : -10px"> 
+                        <input name="vinhonneur" type="radio" id="vinhonneurOui"><p>Oui</p>
+                    </label>
+                    <label class="radio-inline" style="margin-top : -10px">
+                        <input name="vinhonneur" type="radio" id="vinhonneurNon"><p>Non</p>
+                    </label>
+                  </div>
 
-        <button id="add_adult" class="btn btn-success upspacer bspacer">Ajouter un conjoint</button>
+                  <div class="form-group col-md-4 spacer" id="diner">
+                    <p>Présence au dîner :</p>
+                    <label class="radio-inline " style="margin-top : -10px"> 
+                        <input name="diner" type="radio" id="dinerOui"><p>Oui</p>
+                    </label>
+                    <label class="radio-inline" style="margin-top : -10px">
+                        <input name="diner" type="radio" id="dinerNon"><p>Non</p>
+                    </label>
+                  </div>  
 
-        <button id="add_child" class="btn btn-success upspacer bspacer">Ajouter un enfant</button>
-
+                  <div class="form-group col-md-4 spacer" id="brunch">
+                    <p>Présence au brunch le dimanche :</p>
+                    <label class="radio-inline " style="margin-top : -10px"> 
+                        <input name="brunch" type="radio" id="brunchOui"><p>Oui</p>
+                    </label>
+                    <label class="radio-inline" style="margin-top : -10px">
+                        <input name="brunch" type="radio" id="brunchNon"><p>Non</p>
+                    </label>
+                  </div>
+            </div>
+            <div class="row">                   
+                  <div class="col-md-12 spacer" id="addInviteRSVP">  
+                    <p>Souhaitez-vous qu´une autre personne de votre groupe soit rajoutée au RSVP ?</p>
+                  </div>
+            </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3 col-md-offset-7">
+            <input type="text" class="form-control" id="quiReponduBox" disabled="disabled" placeholder="Répondu par " style="display: none;">
+          </div>
+          <div class="col-md-2" style="padding-right: 0px;">
+            <button class="btn btn-primary pull-right" id="sendRSVP">Envoyer</button>
+          </div>
+        </div>
+</script>  <!-- END OF RSVP SCRIPT -->
+  
+  </div> <!-- /container -->
+        <hr>
+  </body>
 
       <!-- FOOTER -->
-      <footer>
-      <hr>
-        <p class="pull-right" style="font-family : arial"><a class="scroll-top" href="http://www.mariageadeledionisio.com/fr/main.html">Page initiale</a></p>
-        <p class="pull-right" style="font-family : arial">&copy; 2016 Thibault &nbsp;|&nbsp;
+      <footer id="footer">
+        <p class="pull-right" style="font-family : arial"><a href="#">Haut</a></p>
+        <p class="pull-right" style="font-family : arial">&copy; 2015 Thibault & Ingrid &nbsp;|&nbsp;
       </footer>
 
-    </div><!-- /.container -->
-
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script src="./js/bootstrap.min.js"></script>
-    <script src="./js/docs.min.js"></script>
-    <script src="./countdown/jquery.countdown.js"></script>
-    <script src="./js/countdown_script.js"></script>
-
-    <script type="text/javascript">
-        function thankyouFunction() {
-          }
-    </script>
-
     <!-- Add or delete fields -->
-    <script>
-      $(document).ready(function(){
-        //when the Add Filed button is clicked
-        $("#add_adult").click(function (e) {
-          //Append a new row of code to the "#items" div
-          $("#formulaire").append('<div class="form-group bspacer upspacer leftspacer"><label class="col-md-1" for="prenom_a">Prénom:</label><div class="col-md-5 positive-spacer"><input type="text" class="form-control" name="prenom_a" placeholder="Prénom Conjoint"></div><label class="col-md-1 negative-spacer" for="nom_a">Nom:</label><div class="col-md-4"><input type="text" class="form-control" name="nom_a" placeholder="Nom Conjoint"></div><button  class="btn btn-danger delete">-</button></div>');
-        });
 
-        $("#add_child").click(function (e) {
-          //Append a new row of code to the "#items" div
-          $("#formulaire").append('<div class="form-group bspacer upspacer leftspacer"><label class="col-md-1" for="prenom_a">Prénom:</label><div class="col-md-5 positive-spacer"><input type="text" class="form-control" name="prenom_ch" placeholder="Prénom Enfant"></div><label class="col-md-1 negative-spacer" for="nom_ch">Nom:</label><div class="col-md-4"><input type="text" class="form-control" name="nom_ch" placeholder="Nom Enfant"></div><button  class="btn btn-danger delete">-</button></div>');
-        });
-
-      $("body").on("click", ".delete", function (e) {
-        $(this).parent("div").remove();
-      });
-      });
-    </script>
-
-  </body>
 </html>

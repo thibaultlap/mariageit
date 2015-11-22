@@ -104,7 +104,7 @@
 
       <div class="row featurette">
         <div class="col-md-7">
-          <h2 class="featurette-heading"><a href="hebergement.html"> <span style="color: #47006b;"> Hébergement </span></a></h2>
+          <h2 class="featurette-heading"><a target="_blank" href="hebergements.pdf"> <span style="color: #47006b;"> Hébergement </span></a></h2>
           <p class="lead">Hôtels, gîtes, chambres d'hôtes... trouvez ici un lieu pour vous accueillir au petit matin</p>
         </div>
         <div class="col-md-5">
@@ -159,13 +159,29 @@
                 <h4 class="modal-title" id="myModalLabel">Programme du Mariage</h4>
               </div>
               <div class="modal-body">
-                <h5>15h - Cérémonie Religieuse</h5>
-                <h5>18h30 - Vin d'honneur </h5>
-                <h5>21h - Repas  </h5>
-                <h5>23h - Soirée Dansante</h5>
-                <h5 style="margin-bottom : 50px">Dimanche 13h - Brunch au Château</h5>
-                <p>Nous sommes conscients que de nombreuses personnes vont s'associer à notre joie et nous faire partager la leur à travers des discours, des animations. Tout ceci se déroulera durant le dîner. Afin que celui-ci se déroule dans les meilleures conditions, merci de voir tout cela avec <b>nos témoins</b> (<a href="https://www.facebook.com/pierre.dl.9?fref=ts" target="_blank">Facebook</a>, <a href="mailto:pierreduquennelietar@gmail.com" target="_blank">mail</a>).
+                <h5>15h30 - Cérémonie Religieuse</h5>
+                <h5>18h00 - Vin d'honneur </h5>
+                <h5 id="progRepas">20h00 - Repas  </h5>
+                <h5 id="progSoiree">Soirée Dansante</h5>
+                <h5 id="progBrunch" style="margin-bottom : 50px">Dimanche 13h - Brunch au Château</h5>
+                <p id="progTemoins">Nous sommes conscients que de nombreuses personnes vont s'associer à notre joie et nous faire partager la leur à travers des discours, des animations. Tout ceci se déroulera durant le dîner. Afin que celui-ci se déroule dans les meilleures conditions, merci de voir tout cela avec <b>nos témoins</b> (<a href="https://www.facebook.com/pierre.dl.9?fref=ts" target="_blank">Facebook</a>, <a href="mailto:pierreduquennelietar@gmail.com" target="_blank">mail</a>).
               </div>
+              <script type="text/javascript">
+                  if(sessionStorage.getItem('type').indexOf("R") == -1)
+                  {
+                    document.getElementById("progRepas").style.display = "none";
+                    document.getElementById("progSoiree").style.display = "none";
+                    document.getElementById("progBrunch").style.display = "none";
+                    document.getElementById("progTemoins").style.display = "none"; 
+                  } 
+                  else
+                  {
+                    document.getElementById("progRepas").style.display = "block";
+                    document.getElementById("progSoiree").style.display = "block";
+                    document.getElementById("progBrunch").style.display = "block";                   
+                    document.getElementById("progTemoins").style.display = "block";                     
+                  }
+              </script>
               <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
               </div>
@@ -187,7 +203,7 @@
         <p>Notre plus beau cadeau sera, dans tous les cas, votre venue le 17 septembre.</p>
               </div>
               <div class="modal-footer">
-                <a href="http://www.millemercismariage.com/MariageAdeleDionisio/liste.html" class="btn btn-success" role="button" target="_blank">Liste de Mariage</a> <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+                <a href="" class="btn btn-success" role="button" target="_blank">Liste de Mariage</a> <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
               </div>
             </div>
           </div>
@@ -196,7 +212,7 @@
       <!-- FOOTER -->
       <footer>
         <p class="pull-right" style="font-family : arial"><a href="#">Haut</a></p>
-        <p class="pull-right" style="font-family : arial">&copy; 2016 Thibault &nbsp;|&nbsp;
+        <p class="pull-right" style="font-family : arial">&copy; 2015 Thibault & Ingrid &nbsp;|&nbsp;
       </footer>
 
     </div><!-- /.container -->
