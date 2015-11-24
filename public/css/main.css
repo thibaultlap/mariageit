@@ -61,9 +61,10 @@ body {
 
 .jumbotron h3 {
   color: white;
-  font-family: frames;
-  font-size: 500%;
-  margin-top: -40px;
+  font-family: urban;
+  font-weight: bold;
+  font-size: 130%;
+  text-align: center;
 }
 
 .post-content {

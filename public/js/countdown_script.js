@@ -12,8 +12,8 @@
 			
 			message += days + " jour" + ( days==1 ? '':'s' ) + ", ";
 			message += hours + " heure" + ( hours==1 ? '':'s' ) + ", ";
-			message += minutes + " minute" + ( minutes==1 ? '':'s' + " et " );
-			message += seconds + " seconde" + ( seconds==1 ? '':'s' );			note.html(message);
+			message += minutes + " minute" + ( minutes==1 ? '':'s');
+			note.html(message);
 		}
 	});
 	
