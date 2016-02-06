@@ -34,6 +34,7 @@ $(function() {
 
     if(sessionStorage.getItem('rsvp') == "true")
     {
+        document.getElementById("txtRSVPattention").style.display = "hide";
         $("#sendRSVP").removeClass("btn-success");
         $("#sendRSVP").addClass("btn-danger");
         $("#sendRSVP").text("Changer RSVP");
@@ -43,7 +44,10 @@ $(function() {
           document.getElementById("quiReponduBox").setAttribute('placeholder',"RSVP répondu par " + sessionStorage.getItem('quiRepondu'));
           document.getElementById("quiReponduBox").style.display = "block";
         }
-        else document.getElementById("quiReponduBox").style.display = "hide";
+        else{
+          document.getElementById("quiReponduBox").setAttribute('placeholder',"Votre réponse a bien été envoyée, merci !");
+          document.getElementById("quiReponduBox").style.display = "block";        
+        } 
 
         if(sessionStorage.getItem('vinhonneur')) document.getElementById("vinhonneurOui").checked = true;
         else document.getElementById("vinhonneurNon").checked = true;
@@ -148,6 +152,7 @@ $(function() {
     }
     else
     {
+        document.getElementById("txtRSVPattention").style.display = "block";
         var Invites = Parse.Object.extend("invites");
         var query = new Parse.Query(Invites);
         var numeroGroupe = parseInt(sessionStorage.getItem('groupe'), 10);
@@ -246,12 +251,13 @@ $(function() {
     },
 
     sendRSVP: function(e) {
-      document.getElementById("quiReponduBox").style.display = "hide";
+      document.getElementById("quiReponduBox").style.display = "block";
+      document.getElementById("quiReponduBox").setAttribute('placeholder',"Votre réponse a bien été envoyée, merci !");
       if ($('input[name=vinhonneur]:checked').length == 0 || $('input[name=diner]:checked').length == 0 || $('input[name=brunch]:checked').length == 0) {
           console.log("missing one !")
           // error TODO
       }
-      else if (document.getElementById("email").value == '' || document.getElementById("adresse").value == '') {
+      else if (document.getElementById("adresse").value == '') {
           console.log("missing info !")
           // error TODO
       }
